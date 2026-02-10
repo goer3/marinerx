@@ -2,15 +2,15 @@ import React from 'react';
 import { Button, Result } from 'antd';
 import { ArrowLeftOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router';
-import { Helmet } from 'react-helmet';
+import { Helmet } from '@dr.pogodin/react-helmet';
 import { TitleSuffix } from '@/components/Text';
 
 // 页面配置
 const config = {
-  title: '404'
+  title: '403'
 };
 
-const PageNotFoundError = () => {
+const PermissionDeniedError = () => {
   const navigate = useNavigate();
   return (
     <>
@@ -18,9 +18,9 @@ const PageNotFoundError = () => {
         <title>{config.title + TitleSuffix}</title>
       </Helmet>
       <Result
-        status="404"
-        title="404"
-        subTitle="页面不存在，请检查页面地址是否正确！"
+        status="403"
+        title="403"
+        subTitle="权限不足，当前用户角色无权访问该页面！"
         extra={
           <Button className="dk-error-btn" type="primary" icon={<ArrowLeftOutlined />} onClick={() => navigate('/')}>
             返回首页
@@ -31,4 +31,4 @@ const PageNotFoundError = () => {
   );
 };
 
-export default PageNotFoundError;
+export default PermissionDeniedError;

@@ -1,5 +1,5 @@
 // 获取树形结构所有 key 列表
-const GetTreeAllKeys = (nodes) => {
+export const GetTreeAllKeys = (nodes) => {
   let keys = [];
   nodes.forEach((node) => {
     if (node.children && node.children.length > 0) {
@@ -11,7 +11,7 @@ const GetTreeAllKeys = (nodes) => {
 };
 
 // 递归获取当前节点下面的所有子 key 列表
-const GetTreeNodeChildrenKeys = (node) => {
+export const GetTreeNodeChildrenKeys = (node) => {
   let keys = [];
   if (node.children && node.children.length > 0) {
     node.children.forEach((child) => {
@@ -21,5 +21,3 @@ const GetTreeNodeChildrenKeys = (node) => {
   }
   return keys;
 };
-
-export { GetTreeAllKeys, GetTreeNodeChildrenKeys };

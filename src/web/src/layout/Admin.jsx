@@ -32,7 +32,7 @@ import { Avatar, Badge, Button, Col, Dropdown, Layout, Menu, Row, Statistic, Typ
 import { Outlet, useLocation, useNavigate } from 'react-router';
 import { ArrowLeftIcon, ArrowRightIcon } from '@/components/Icon';
 import { DefaultAvatarImage, LogoImage } from '@/components/Image';
-import { GenerateGenderBadge } from '@/components/Tag';
+import { GenerateGenderBadge } from '@/components/Badge';
 
 const { Header, Content, Sider } = Layout;
 const { Paragraph } = Typography;
@@ -363,7 +363,7 @@ const AdminLayout = () => {
     <Layout>
       <Header className="dk-header">
         <Space size="small">
-          <div style={{width: "170px", marginRight: "10px"}}>
+          <div style={{ width: '170px', marginRight: '10px' }}>
             <img src={LogoImage} alt="logo" className="dk-logo" />
           </div>
           <Cascader style={{ width: '200px' }} options={environmentAndClusterOptionData} onChange={onOptionChange} placeholder="选择环境/集群" showSearch={{ optionFilter }} value={cascaderValue} />

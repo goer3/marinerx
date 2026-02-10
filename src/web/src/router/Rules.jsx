@@ -16,18 +16,18 @@ export const Rules = [
     children: [
       {
         path: '/dashboard',
-        element: RouterLazyLoad(React.lazy(() => import('@/page/default/Default.jsx')))
+        element: RouterLazyLoad(React.lazy(() => import('@/pages/default/Default.jsx')))
       },
       {
         path: '/cluster',
         children: [
           {
             path: '/cluster/overview',
-            element: RouterLazyLoad(React.lazy(() => import('@/page/default/Default.jsx')))
+            element: RouterLazyLoad(React.lazy(() => import('@/pages/default/Default.jsx')))
           },
           {
             path: '/cluster/join',
-            element: RouterLazyLoad(React.lazy(() => import('@/page/default/Default.jsx')))
+            element: RouterLazyLoad(React.lazy(() => import('@/pages/default/Default.jsx')))
           },
         ]
       },
@@ -36,39 +36,39 @@ export const Rules = [
         children: [
           {
             path: '/kubernetes/overview',
-            element: RouterLazyLoad(React.lazy(() => import('@/page/default/Default.jsx')))
+            element: RouterLazyLoad(React.lazy(() => import('@/pages/default/Default.jsx')))
           },
           {
             path: '/kubernetes/node',
-            element: RouterLazyLoad(React.lazy(() => import('@/page/default/Default.jsx')))
+            element: RouterLazyLoad(React.lazy(() => import('@/pages/default/Default.jsx')))
           },
           {
             path: '/kubernetes/namespace',
-            element: RouterLazyLoad(React.lazy(() => import('@/page/default/Default.jsx')))
+            element: RouterLazyLoad(React.lazy(() => import('@/pages/default/Default.jsx')))
           },
           {
             path: '/kubernetes/pod',
-            element: RouterLazyLoad(React.lazy(() => import('@/page/default/Default.jsx')))
+            element: RouterLazyLoad(React.lazy(() => import('@/pages/default/Default.jsx')))
           },
           {
             path: '/kubernetes/workload',
-            element: RouterLazyLoad(React.lazy(() => import('@/page/default/Default.jsx')))
+            element: RouterLazyLoad(React.lazy(() => import('@/pages/default/Default.jsx')))
           },
           {
             path: '/kubernetes/service',
-            element: RouterLazyLoad(React.lazy(() => import('@/page/default/Default.jsx')))
+            element: RouterLazyLoad(React.lazy(() => import('@/pages/default/Default.jsx')))
           },
           {
             path: '/kubernetes/ingress',
-            element: RouterLazyLoad(React.lazy(() => import('@/page/default/Default.jsx')))
+            element: RouterLazyLoad(React.lazy(() => import('@/pages/default/Default.jsx')))
           },
           {
             path: '/kubernetes/configmap-and-secret',
-            element: RouterLazyLoad(React.lazy(() => import('@/page/default/Default.jsx')))
+            element: RouterLazyLoad(React.lazy(() => import('@/pages/default/Default.jsx')))
           },
           {
             path: '/kubernetes/storage',
-            element: RouterLazyLoad(React.lazy(() => import('@/page/default/Default.jsx')))
+            element: RouterLazyLoad(React.lazy(() => import('@/pages/default/Default.jsx')))
           },
         ]
       },
@@ -77,29 +77,29 @@ export const Rules = [
         children: [
           {
             path: '/system/user',
-            element: RouterLazyLoad(React.lazy(() => import('@/page/default/Default.jsx')))
+            element: RouterLazyLoad(React.lazy(() => import('@/pages/system/SystemUser.jsx')))
           },
           {
             path: '/system/role',
-            element: RouterLazyLoad(React.lazy(() => import('@/page/default/Default.jsx')))
+            element: RouterLazyLoad(React.lazy(() => import('@/pages/system/SystemRole.jsx')))
           },
           {
             path: '/system/menu',
-            element: RouterLazyLoad(React.lazy(() => import('@/page/default/Default.jsx')))
+            element: RouterLazyLoad(React.lazy(() => import('@/pages/default/Default.jsx')))
           },
           {
             path: '/system/api',
-            element: RouterLazyLoad(React.lazy(() => import('@/page/default/Default.jsx')))
+            element: RouterLazyLoad(React.lazy(() => import('@/pages/default/Default.jsx')))
           },
           {
             path: '/system/setting',
-            element: RouterLazyLoad(React.lazy(() => import('@/page/default/Default.jsx')))
+            element: RouterLazyLoad(React.lazy(() => import('@/pages/default/Default.jsx')))
           }
         ]
       },
       {
         path: '/information',
-        element: RouterLazyLoad(React.lazy(() => import('@/page/default/Default.jsx')))
+        element: RouterLazyLoad(React.lazy(() => import('@/pages/default/Default.jsx')))
       }
     ]
   },
@@ -109,19 +109,19 @@ export const Rules = [
     children: [
       {
         path: '/login',
-        element: RouterLazyLoad(React.lazy(() => import('@/page/default/Default.jsx')))
+        element: RouterLazyLoad(React.lazy(() => import('@/pages/default/Default.jsx')))
       },
       {
         path: '/403',
-        element: RouterLazyLoad(React.lazy(() => import('@/page/error/403/403.jsx')))
+        element: RouterLazyLoad(React.lazy(() => import('@/pages/error/403/403.jsx')))
       },
       {
         path: '/404',
-        element: RouterLazyLoad(React.lazy(() => import('@/page/error/404/404.jsx')))
+        element: RouterLazyLoad(React.lazy(() => import('@/pages/error/404/404.jsx')))
       },
       {
         path: '/500',
-        element: RouterLazyLoad(React.lazy(() => import('@/page/error/500/500.jsx')))
+        element: RouterLazyLoad(React.lazy(() => import('@/pages/error/500/500.jsx')))
       }
     ]
   },

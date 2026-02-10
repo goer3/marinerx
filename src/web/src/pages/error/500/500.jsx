@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Result } from 'antd';
 import { ArrowLeftOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router';
-import { Helmet } from 'react-helmet';
+import { Helmet } from '@dr.pogodin/react-helmet';
 import { TitleSuffix } from '@/components/Text';
 
 // 页面配置

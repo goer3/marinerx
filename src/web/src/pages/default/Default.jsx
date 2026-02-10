@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet';
+import { Helmet } from '@dr.pogodin/react-helmet';
 import { TitleSuffix } from '@/components/Text';
 
 // 页面配置
@@ -12,7 +12,7 @@ const Dashboard = () => {
       <Helmet>
         <title>{config.title + TitleSuffix}</title>
       </Helmet>
-      <h2>默认页面</h2>
+      <h2>{import.meta.env.VITE_ENV}</h2>
     </>
   );
 };

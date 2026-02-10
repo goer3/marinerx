@@ -174,10 +174,12 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
   user-select: none;
+  background-color: #f7f8fa;
 
   .dk-menu {
     padding: 10px 0;
     letter-spacing: 1px;
+    background-color: #f7f8fa;
   }
 
   // 侧边栏触发器
@@ -233,12 +235,6 @@ body {
     opacity: 0.05; // 调整此值改变背景图透明度（0.0 ~ 1.0）
     pointer-events: none; // 不阻塞交互
     z-index: 0;
-  }
-
-  // 确保所有直接子元素位于伪元素之上
-  > * {
-    position: relative;
-    z-index: 1;
   }
 }
 
@@ -345,11 +341,12 @@ body {
 }
 
 .dk-page-header {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
   padding: 20px 15px;
+  background-image: url(../images/background/banner.png);
+  background-size: calc(100% - 10px);
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.03);
   border-bottom: 1px solid @color-gray;
 
   .dk-page-header-title {

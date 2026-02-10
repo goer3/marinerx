@@ -11,13 +11,14 @@
   },
   "dependencies": {
     "@ant-design/icons": "^6.1.0",
+    "@dr.pogodin/react-helmet": "^3.0.5",
     "antd": "^6.2.2",
+    "axios": "^1.13.4",
     "echarts": "^6.0.0",
     "less": "^4.5.1",
     "misans": "^4.1.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-helmet": "^6.1.0",
     "react-router": "^7.13.0"
   },
   "devDependencies": {
