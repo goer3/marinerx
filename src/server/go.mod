@@ -1,7 +1,7 @@
 module github.com/goer3/marinerx
 
 // 多版本 go 环境管理：https://cloud.tencent.com/developer/article/2268920
-go 1.25.6
+go 1.26.0
 
 require (
 	github.com/dromara/carbon/v2 v2.6.16

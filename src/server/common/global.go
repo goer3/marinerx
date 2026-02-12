@@ -13,7 +13,7 @@ const (
 	PROJECT_NAME              = "MARINER-X"
 	PROJECT_DESCRIPTION       = "Mariner X，一站式云原生运维管理平台"
 	PROJECT_VERSION           = "1.0.0"
-	PROJECT_GO_VERSION        = "1.25.0+"
+	PROJECT_GO_VERSION        = "1.26.0+"
 	PROJECT_REACT_VERSION     = "19+"
 	PROJECT_ANTD_VERSION      = "6+"
 	PROJECT_DEVELOPER         = "DK"
