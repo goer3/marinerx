@@ -27,12 +27,12 @@ var startCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Print(common.LOGO)
 
-		// 初始化配置
-		initialize.Config()
-
-		// 初始化日志
-		initialize.SystemLogger()
-		initialize.AccessLogger()
+		// 初始化
+		initialize.Config()       // 初始化配置
+		initialize.SystemLogger() // 初始化系统日志
+		initialize.AccessLogger() // 初始化访问日志
+		initialize.MySQL()        // 初始化 MySQL
+		initialize.Redis()        // 初始化 Redis
 
 		// 判断是否是 Leader 节点
 		if common.Config.System.Role.Leader {

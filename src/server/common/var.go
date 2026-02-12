@@ -15,3 +15,6 @@ var (
 	// 服务是否开启Web后端服务角色, 0: 不开启, 1: 开启
 	ParamSystemRoleWeb = -1
 )
+
+// 节点 Id
+var NodeId string

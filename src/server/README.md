@@ -13,4 +13,10 @@ go get -u github.com/spf13/viper
 go get -u go.uber.org/zap
 # 日志切割
 go get -u gopkg.in/natefinch/lumberjack.v2
+# 数据库 ORM
+go get -u gorm.io/gorm
+# 数据库驱动
+go get -u gorm.io/driver/mysql
+# Redis
+go get -u github.com/redis/go-redis/v9
 ```

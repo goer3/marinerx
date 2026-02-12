@@ -3,7 +3,9 @@ package common
 import (
 	"embed"
 
+	"github.com/redis/go-redis/v9"
 	"go.uber.org/zap"
+	"gorm.io/gorm"
 )
 
 // 项目常量
@@ -39,4 +41,6 @@ var (
 	Config    *Configuration     // 配置文件解析保存数据
 	SystemLog *zap.SugaredLogger // 系统日志
 	AccessLog *zap.SugaredLogger // 访问日志
+	DB        *gorm.DB           // MySQL 连接
+	Cache     *redis.Client      // Redis 连接
 )

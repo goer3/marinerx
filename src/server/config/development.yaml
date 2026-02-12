@@ -69,3 +69,46 @@ log:
       # 是否压缩
       compress: true
 
+# MySQL 数据库连接配置
+mysql:
+  # 主机地址
+  host: marinerx.mysql.ezops.cn
+  # 端口
+  port: 3306
+  # 数据库
+  database: marinerx
+  # 用户名
+  username: root
+  # 密码
+  password: 123456
+  # 超时时间，单位毫秒
+  timeout: 1000
+  # 连接参数
+  params: charset=utf8mb4&collation=utf8mb4_bin&parseTime=True&loc=Local
+  # 最大打开链接数
+  max_open_conns: 100
+  # 最大空闲连接数
+  max_idle_conns: 10
+  # 空闲连接最大超时时间，单位分钟
+  max_idle_time: 30
+
+# Redis 数据库连接配置
+redis:
+  # 主机地址
+  host: marinerx.redis.ezops.cn
+  # 端口
+  port: 6379
+  # 数据库
+  database: 0
+  # 密码，没有就不设置
+  password: ""
+  # 连接超时时间，单位秒
+  timeout: 5
+  # 最大连接数，一般比 CPU 核数 4 倍少一点
+  max_open_conns: 12
+  # 最小空闲连接
+  min_idle_conns: 5
+  # 最大空闲连接
+  max_idle_conns: 10
+  # 最大空闲时长，单位分钟
+  max_idle_time: 10

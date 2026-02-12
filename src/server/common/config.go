@@ -4,6 +4,8 @@ package common
 type Configuration struct {
 	System SystemConfiguration `mapstructure:"system" yaml:"system" json:"system"`
 	Log    LogConfiguration    `mapstructure:"log" yaml:"log" json:"log"`
+	MySQL  MySQLConfiguration  `mapstructure:"mysql" yaml:"mysql" json:"mysql"`
+	Redis  RedisConfiguration  `mapstructure:"redis" yaml:"redis" json:"redis"`
 }
 
 // 系统配置
@@ -49,4 +51,31 @@ type LogRollingConfiguration struct {
 	MaxBackups int  `mapstructure:"max_backups" yaml:"max_backups" json:"max_backups"`
 	MaxAge     int  `mapstructure:"max_age" yaml:"max_age" json:"max_age"`
 	Compress   bool `mapstructure:"compress" yaml:"compress" json:"compress"`
+}
+
+// MySQL 配置
+type MySQLConfiguration struct {
+	Host         string `mapstructure:"host" yaml:"host" json:"host"`
+	Port         int    `mapstructure:"port" yaml:"port" json:"port"`
+	Database     string `mapstructure:"database" yaml:"database" json:"database"`
+	Username     string `mapstructure:"username" yaml:"username" json:"username"`
+	Password     string `mapstructure:"password" yaml:"password" json:"password"`
+	Timeout      int    `mapstructure:"timeout" yaml:"timeout" json:"timeout"`
+	Params       string `mapstructure:"params" yaml:"params" json:"params"`
+	MaxOpenConns int    `mapstructure:"max_open_conns" yaml:"max_open_conns" json:"max_open_conns"`
+	MaxIdleConns int    `mapstructure:"max_idle_conns" yaml:"max_idle_conns" json:"max_idle_conns"`
+	MaxIdleTime  int    `mapstructure:"max_idle_time" yaml:"max_idle_time" json:"max_idle_time"`
+}
+
+// Redis 配置
+type RedisConfiguration struct {
+	Host         string `mapstructure:"host" yaml:"host" json:"host"`
+	Port         int    `mapstructure:"port" yaml:"port" json:"port"`
+	Database     int    `mapstructure:"database" yaml:"database" json:"database"`
+	Password     string `mapstructure:"password" yaml:"password" json:"password"`
+	Timeout      int    `mapstructure:"timeout" yaml:"timeout" json:"timeout"`
+	MaxOpenConns int    `mapstructure:"max_open_conns" yaml:"max_open_conns" json:"max_open_conns"`
+	MinIdleConns int    `mapstructure:"min_idle_conns" yaml:"min_idle_conns" json:"min_idle_conns"`
+	MaxIdleConns int    `mapstructure:"max_idle_conns" yaml:"max_idle_conns" json:"max_idle_conns"`
+	MaxIdleTime  int    `mapstructure:"max_idle_time" yaml:"max_idle_time" json:"max_idle_time"`
 }
