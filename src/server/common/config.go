@@ -6,6 +6,7 @@ type Configuration struct {
 	Log    LogConfiguration    `mapstructure:"log" yaml:"log" json:"log"`
 	MySQL  MySQLConfiguration  `mapstructure:"mysql" yaml:"mysql" json:"mysql"`
 	Redis  RedisConfiguration  `mapstructure:"redis" yaml:"redis" json:"redis"`
+	Auth   AuthConfiguration   `mapstructure:"auth" yaml:"auth" json:"auth"`
 }
 
 // 系统配置
@@ -78,4 +79,33 @@ type RedisConfiguration struct {
 	MinIdleConns int    `mapstructure:"min_idle_conns" yaml:"min_idle_conns" json:"min_idle_conns"`
 	MaxIdleConns int    `mapstructure:"max_idle_conns" yaml:"max_idle_conns" json:"max_idle_conns"`
 	MaxIdleTime  int    `mapstructure:"max_idle_time" yaml:"max_idle_time" json:"max_idle_time"`
+}
+
+// 认证配置
+type AuthConfiguration struct {
+	MultiDevice bool                         `mapstructure:"multi_device" yaml:"multi_device" json:"multi_device"`
+	JWT         JWTConfiguration             `mapstructure:"jwt" yaml:"jwt" json:"jwt"`
+	Login       LoginConfiguration           `mapstructure:"login" yaml:"login" json:"login"`
+	Dingtalk    ThirdPartyLoginConfiguration `mapstructure:"dingtalk" yaml:"dingtalk" json:"dingtalk"`
+	Feishu      ThirdPartyLoginConfiguration `mapstructure:"feishu" yaml:"feishu" json:"feishu"`
+	Wechat      ThirdPartyLoginConfiguration `mapstructure:"wechat" yaml:"wechat" json:"wechat"`
+}
+
+// JWT 配置
+type JWTConfiguration struct {
+	Realm   string `mapstructure:"realm" yaml:"realm" json:"realm"`
+	Key     string `mapstructure:"key" yaml:"key" json:"key"`
+	Timeout int    `mapstructure:"timeout" yaml:"timeout" json:"timeout"`
+}
+
+// 登录配置
+type LoginConfiguration struct {
+	Enabled bool `mapstructure:"enabled" yaml:"enabled" json:"enabled"`
+}
+
+// 三方登录配置
+type ThirdPartyLoginConfiguration struct {
+	Enabled   bool   `mapstructure:"enabled" yaml:"enabled" json:"enabled"`
+	AppID     string `mapstructure:"app_id" yaml:"app_id" json:"app_id"`
+	AppSecret string `mapstructure:"app_secret" yaml:"app_secret" json:"app_secret"`
 }

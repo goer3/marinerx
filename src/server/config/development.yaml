@@ -49,9 +49,9 @@ log:
     # 是否开启访问日志，可选值：true、false
     enabled: true
     # 日志级别，可选值：debug、info、warn、error、panic、fatal
-    level: info
+    level: debug
     # 日志输出格式，可选值：json、text
-    formatter: json
+    formatter: text
     # 日志输出目录
     path: logs
     # 日志文件前缀
@@ -112,3 +112,44 @@ redis:
   max_idle_conns: 10
   # 最大空闲时长，单位分钟
   max_idle_time: 10
+
+# 用户认证配置
+auth:
+  # 多设备登录
+  multi_device: false
+  # JWT 配置
+  jwt:
+    # 领域，用于区分不同的认证范围
+    realm: marinerx
+    # 用于签名和验证 JWT 令牌的密钥，一般是一个随机生成的字符串（生产环境一定要修改成自己的）
+    key: marinerx_jwt_secret_key
+    # Token 超时时间，单位秒，默认 1 天，Redis 中有效期也是如此
+    timeout: 86400
+  # 密码登录方式
+  login:
+    # 是否开启密码登录，可选值：true、false
+    enabled: true
+  # 钉钉扫码登录方式
+  dingtalk:
+    # 是否开启钉钉扫码登录，可选值：true、false
+    enabled: true
+    # 应用 ID
+    app_id: your_dingtalk_app_id
+    # 应用密钥
+    app_secret: your_dingtalk_app_secret
+  # 飞书扫码登录方式
+  feishu:
+    # 是否开启飞书扫码登录，可选值：true、false
+    enabled: true
+    # 应用 ID
+    app_id: your_feishu_app_id
+    # 应用密钥
+    app_secret: your_feishu_app_secret
+  # 企业微信扫码登录方式
+  wechat:
+    # 是否开启企业微信扫码登录，可选值：true、false
+    enabled: true
+    # 应用 ID
+    app_id: your_wechat_app_id
+    # 应用密钥
+    app_secret: your_wechat_app_secret

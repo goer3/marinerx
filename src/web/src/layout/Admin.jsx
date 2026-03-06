@@ -366,7 +366,7 @@ const AdminLayout = () => {
           <div style={{ width: '170px', marginRight: '10px' }}>
             <img src={LogoImage} alt="logo" className="dk-logo" />
           </div>
-          <Cascader style={{ width: '200px' }} options={environmentAndClusterOptionData} onChange={onOptionChange} placeholder="选择环境/集群" showSearch={{ optionFilter }} value={cascaderValue} />
+          <Cascader style={{ width: '200px' }} options={environmentAndClusterOptionData} onChange={onOptionChange} placeholder="选择环境/集群" showSearch={{ optionFilter }} value={cascaderValue} allowClear={false} />
           <Select options={namespaceOptionData} style={{ width: '200px' }} placeholder="选择命名空间" showSearch value={namespace} onChange={onNamespaceChange} />
           <Input placeholder="全局搜索" prefix={<SearchOutlined />} variant="filled" style={{ width: '300px' }} />
         </Space>

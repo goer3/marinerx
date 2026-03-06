@@ -19,4 +19,8 @@ go get -u gorm.io/gorm
 go get -u gorm.io/driver/mysql
 # Redis
 go get -u github.com/redis/go-redis/v9
+# JWT
+go get -u github.com/appleboy/gin-jwt/v3
+# 结构体赋值转换
+go get -u github.com/jinzhu/copier
 ```

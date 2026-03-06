@@ -1,12 +1,20 @@
 package initialize
 
-import "github.com/goer3/marinerx/common"
+import (
+	"github.com/goer3/marinerx/common"
+	"github.com/goer3/marinerx/model"
+)
 
 // 数据表结构同步
 func Table() {
 	models := []any{
-		// &model.SystemRole{},
-		// &model.SystemUser{},
+		&model.SystemRole{},
+		&model.SystemUser{},
+		&model.SystemMenu{},
+		&model.SystemUserExtraMenu{},
+		&model.SystemApiCategory{},
+		&model.SystemApi{},
+		&model.SystemUserExtraApi{},
 	}
 
 	for _, m := range models {

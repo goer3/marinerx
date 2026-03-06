@@ -1,6 +1,8 @@
 package initialize
 
 import (
+	"os"
+
 	"github.com/gin-gonic/gin"
 	"github.com/goer3/marinerx/common"
 	"github.com/goer3/marinerx/middleware"
@@ -16,16 +18,43 @@ func Router() *gin.Engine {
 	r := gin.New()
 
 	// 全局中间件
-	r.Use(middleware.Exception)
 	r.Use(middleware.AccessLogger)
+	r.Use(middleware.Exception)
 
-	// 开放路由，无需认证
-	OpenApiGroup := r.Group(common.SYSTEM_OPEN_API_PREFIX + "/" + common.SYSTEM_API_VERSION)
-	router.OpenApiRouter(OpenApiGroup)
+	// JWT 中间件
+	auth, err := middleware.JWTAuth()
+	if err != nil {
+		common.SystemLog.Fatal("JWT 中间件初始化异常：" + err.Error())
+		os.Exit(1)
+	}
 
-	// 开放路由，需要认证
-	OpenApiWithAuthGroup := r.Group(common.SYSTEM_OPEN_API_PREFIX + "/" + common.SYSTEM_API_VERSION)
-	router.OpenApiWithAuthRouter(OpenApiWithAuthGroup)
+	// 开放 API 前缀
+	OpenApiPrefix := common.SYSTEM_OPEN_API_PREFIX + "/" + common.SYSTEM_API_VERSION
+
+	// API 前缀
+	ApiPrefix := common.SYSTEM_API_PREFIX + "/" + common.SYSTEM_API_VERSION
+
+	{
+		// 开放路由，无需认证
+		OpenApiGroup := r.Group(OpenApiPrefix)
+		router.OpenApiRouter(OpenApiGroup)
+	}
+	{
+		// 开放路由，需要认证
+		OpenApiWithAuthGroup := r.Group(ApiPrefix)
+		router.OpenApiWithAuthRouter(OpenApiWithAuthGroup)
+	}
+	{
+		// 基础路由，无需认证
+		ApiGroup := r.Group(ApiPrefix)
+		router.ApiRouter(ApiGroup, auth)
+	}
+	{
+		// 系统模块路由，需要认证
+		SystemApiGroup := ApiPrefix + "/system"
+		// 用户模块路由，需要认证
+		router.SystemUserApiWithAuthRouter(r.Group(SystemApiGroup+"/user"), auth)
+	}
 
 	return r
 }

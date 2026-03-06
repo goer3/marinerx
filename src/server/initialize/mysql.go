@@ -33,6 +33,7 @@ func MySQL() {
 		DisableForeignKeyConstraintWhenMigrating: true,  // 禁用外键
 		IgnoreRelationshipsWhenMigrating:         false, // 开启会导致 many2many 的表创建失败
 		QueryFields:                              true,  // 解决查询索引失效问题
+		// TranslateError:                           true,  // 启用错误翻译
 	}
 
 	// 如果日志级别是 DEBUG，则打印所有 SQL

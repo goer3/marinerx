@@ -13,7 +13,7 @@ const (
 	PROJECT_NAME              = "MARINER-X"
 	PROJECT_DESCRIPTION       = "Mariner X，一站式云原生运维管理平台"
 	PROJECT_VERSION           = "1.0.0"
-	PROJECT_GO_VERSION        = "1.26.0+"
+	PROJECT_GO_VERSION        = "1.25.0+"
 	PROJECT_REACT_VERSION     = "19+"
 	PROJECT_ANTD_VERSION      = "6+"
 	PROJECT_DEVELOPER         = "DK"
@@ -23,9 +23,10 @@ const (
 
 // 系统常量
 const (
-	SYSTEM_OPEN_API_PREFIX = "/openapi" // 系统开放API前缀
-	SYSTEM_API_PREFIX      = "/api"     // 系统API前缀
-	SYSTEM_API_VERSION     = "v1"       // 系统API版本
+	SYSTEM_OPEN_API_PREFIX           = "/openapi" // 系统开放API前缀
+	SYSTEM_API_PREFIX                = "/api"     // 系统API前缀
+	SYSTEM_API_VERSION               = "v1"       // 系统API版本
+	SYSTEM_USER_DEFAULT_EXPIRE_YEARS = 100        // 系统用户默认过期时间（单位：年）
 )
 
 // 时间格式化

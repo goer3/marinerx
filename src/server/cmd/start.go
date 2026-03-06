@@ -33,6 +33,7 @@ var startCmd = &cobra.Command{
 		initialize.AccessLogger() // 初始化访问日志
 		initialize.MySQL()        // 初始化 MySQL
 		initialize.Redis()        // 初始化 Redis
+		initialize.Validator()    // 初始化 Gin 验证器
 
 		// 判断是否是 Leader 节点
 		if common.Config.System.Role.Leader {
